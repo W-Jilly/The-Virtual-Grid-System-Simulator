@@ -1,0 +1,2 @@
+java -Djava.rmi.useLocalHostname=false -Djava.security.policy=my.policy -Djava.rmi.server.hostname=ec2-54-187-187-242.us-west-2.compute.amazonaws.com cluster.server.Cluster ec2-54-187-187-242.us-west-2.compute.amazonaws.com 1099 7 1000 rmi://ec2-52-24-28-231.us-west-2.compute.amazonaws.com:1099/3
+pause
