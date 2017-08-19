@@ -9,6 +9,8 @@ a) The VGS contains 20 clusters with at least 1000 nodes, 5 grid scheduler nodes
 
 b) The VGS can tolerate a simple failure model in which a GS or a RM might fail.
 
+![Alt text](figure1.png?raw=true "Title")
+
 As shown in figure 1, Our design is to deal with a small or medium grid system with at least 20 clusters, 5 grid schedulers and workload of at least 10,000 jobs. 
 All the GSs are deployed to connect into a unidirectional ring. Then, each newly joined cluster will randomly choose a GS to connect to and maintain a job queue. Whenever a job is sent to a cluster, it will be offloaded to the connected GS if the number of jobs waiting in the queue exceeds a certain threshold. Otherwise, it is dispatched to an idle node. Each GS maintains the load of each cluster in a hashmap and the jobs will be sent to a cluster with the minimum load. Furthermore, the current load of each GS is shared via the ring to enable the load balancing. 
 
